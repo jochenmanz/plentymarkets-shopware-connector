@@ -1,4 +1,5 @@
 ![plentymarkets Logo](http://www.plentymarkets.eu/layout/pm/images/logo/plentymarkets-logo.jpg)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fjochenmanz%2Fplentymarkets-shopware-connector.svg?type=shield)](https://app.fossa.io/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fjochenmanz%2Fplentymarkets-shopware-connector?ref=badge_shield)
 
 # PlentyConnector
 
@@ -37,3 +38,7 @@
 * add and test api creddentials
 * complete all necessary mappings
 
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fjochenmanz%2Fplentymarkets-shopware-connector.svg?type=large)](https://app.fossa.io/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fjochenmanz%2Fplentymarkets-shopware-connector?ref=badge_large)
