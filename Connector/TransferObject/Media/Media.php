@@ -38,7 +38,7 @@ class Media extends AbstractTransferObject implements TranslateableInterface, At
     private $filename;
 
     /**
-     * @var string
+     * @var string|null
      */
     private $hash = '';
 
@@ -143,7 +143,7 @@ class Media extends AbstractTransferObject implements TranslateableInterface, At
     }
 
     /**
-     * @param null|string $hash
+     * @param string|null $hash
      */
     public function setHash($hash = null)
     {

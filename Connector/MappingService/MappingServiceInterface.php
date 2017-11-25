@@ -17,7 +17,7 @@ interface MappingServiceInterface
     public function addDefinition(Definition $definition);
 
     /**
-     * @param null $objectType
+     * @param string|null $objectType
      *
      * @throws MissingQueryException
      *

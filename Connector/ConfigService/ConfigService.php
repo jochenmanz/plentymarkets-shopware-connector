@@ -4,9 +4,10 @@ namespace PlentyConnector\Connector\ConfigService;
 
 use DateTime;
 use DateTimeImmutable;
+use Doctrine\ORM\EntityManagerInterface;
+use Doctrine\ORM\EntityRepository;
 use Exception;
 use PlentyConnector\Connector\ConfigService\Model\Config;
-use Shopware\Components\Model\ModelManager;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -15,12 +16,12 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 class ConfigService implements ConfigServiceInterface
 {
     /**
-     * @var ModelManager
+     * @var EntityManagerInterface
      */
     private $entityManager;
 
     /**
-     * @var ModelManager
+     * @var EntityRepository
      */
     private $repository;
 
@@ -30,10 +31,10 @@ class ConfigService implements ConfigServiceInterface
     private $container;
 
     /**
-     * @param ModelManager       $entityManager
-     * @param ContainerInterface $container
+     * @param EntityManagerInterface $entityManager
+     * @param ContainerInterface     $container
      */
-    public function __construct(ModelManager $entityManager, ContainerInterface $container)
+    public function __construct(EntityManagerInterface $entityManager, ContainerInterface $container)
     {
         $this->entityManager = $entityManager;
         $this->repository = $entityManager->getRepository(Config::class);
@@ -113,7 +114,7 @@ class ConfigService implements ConfigServiceInterface
         $element->setValue($value);
 
         $this->entityManager->persist($element);
-        $this->entityManager->flush($element);
+        $this->entityManager->flush();
         $this->entityManager->clear();
     }
 }

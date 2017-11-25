@@ -14,7 +14,7 @@ class LinkedProduct extends AbstractValueObject
     const TYPE_SIMILAR = 3;
 
     /**
-     * @var string
+     * @var int
      */
     private $type = self::TYPE_ACCESSORY;
 

@@ -4,6 +4,7 @@ namespace PlentyConnector\Connector\ServiceBus\ValidatorMiddleware;
 
 use League\Tactician\Middleware;
 use PlentyConnector\Connector\ServiceBus\Command\TransferObjectCommand;
+use PlentyConnector\Connector\TransferObject\TransferObjectInterface;
 use PlentyConnector\Connector\ValidatorService\ValidatorServiceInterface;
 
 /**
@@ -38,9 +39,13 @@ class ValidatorMiddleware implements Middleware
             return $next($command);
         }
 
-        $object = $command->getTransferObject();
+        $payload = $command->getPayload();
 
-        $this->validator->validate($object);
+        if (!($payload instanceof TransferObjectInterface)) {
+            return $next($command);
+        }
+
+        $this->validator->validate($payload);
 
         return $next($command);
     }

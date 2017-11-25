@@ -109,7 +109,7 @@ class BundleResponseParser implements BundleResponseParserInterface
      * @param array $variation
      * @param array $product
      *
-     * @return Bundle
+     * @return Bundle|null
      */
     private function parseBundle(array $variation, array $product)
     {
@@ -185,7 +185,7 @@ class BundleResponseParser implements BundleResponseParserInterface
     {
         $translations = [];
 
-        foreach ($product['texts'] as $text) {
+        foreach ($product['texts'] ?: [] as $text) {
             $languageIdentifier = $this->identityService->findOneBy([
                 'adapterIdentifier' => $text['lang'],
                 'adapterName' => PlentymarketsAdapter::NAME,

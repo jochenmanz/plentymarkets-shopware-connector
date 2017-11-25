@@ -128,7 +128,7 @@ class Connector implements ConnectorInterface
     }
 
     /**
-     * @param null $objectType
+     * @param string|null $objectType
      *
      * @return Definition[]
      */
@@ -147,7 +147,7 @@ class Connector implements ConnectorInterface
 
     /**
      * @param Definition  $definition
-     * @param int         $queryType
+     * @param string      $queryType
      * @param null|string $identifier
      */
     private function handleDefinition(Definition $definition, $queryType, $identifier = null)
